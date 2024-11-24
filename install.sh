@@ -95,15 +95,15 @@ install_x-ui() {
     stop_x-ui
 
     if [ $# == 0 ]; then
-        last_version=$(curl -Ls "https://api.github.com/repos/amclubs/am-serv00-x-ui/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
-        wget -N --no-check-certificate -O x-ui-${release}-${arch}.tar.gz https://github.com/amclubs/am-serv00-x-ui/releases/latest/download/x-ui-${release}-${arch}.tar.gz
+        last_version=$(curl -Ls "https://api.github.com/repos/FranzKafkaYu/x-ui/releas" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
+        wget -N --no-check-certificate -O x-ui-${release}-${arch}.tar.gz https://github.com/FranzKafkaYu/x-ui/releases/download/${last_version}/x-ui-linux-${arch}.tar.gz
         if [[ $? -ne 0 ]]; then
             echo -e "${red}下载 x-ui 失败，请确保你的服务器能够下载 Github 的文件${plain}"
             exit 1
         fi
     else
         last_version=$1
-        url="https://github.com/vaxilu/x-ui/releases/latest/download/x-ui-${release}-${arch}.tar.gz"
+        url="https://github.com/FranzKafkaYu/x-ui/releases/download/${last_version}/x-ui-linux-${arch}.tar.gz"
         echo -e "开始安装 x-ui v$1"
         wget -N --no-check-certificate -O x-ui-${release}-${arch}.tar.gz ${url}
         if [[ $? -ne 0 ]]; then
