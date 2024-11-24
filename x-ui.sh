@@ -82,9 +82,9 @@ update() {
         return 0
     fi
     cd ~
-    wget -N --no-check-certificate -O x-ui-install.sh https://raw.githubusercontent.com/amclubs/am-serv00-x-ui/main/install.sh
-    chmod +x x-ui-install.sh
-    ./x-ui-install.sh
+    wget -N --no-check-certificate -O x-ui-install.sh https://github.com/a21922/serv00-x-ui/blob/main/install.sh
+    chmod +x install.sh
+    ./install.sh
     if [[ $? == 0 ]]; then
         LOGI "更新完成，已自动重启面板 "
         exit 0
@@ -127,7 +127,7 @@ stop_x-ui() {
 
 install() {
     cd ~
-    wget -N --no-check-certificate -O x-ui-install.sh https://raw.githubusercontent.com/amclubs/am-serv00-x-ui/main/install.sh
+    wget -N --no-check-certificate -O x-ui-install.sh https://github.com/a21922/serv00-x-ui/blob/main/install.sh
     chmod +x x-ui-install.sh
     ./x-ui-install.sh
     if [[ $? == 0 ]]; then
